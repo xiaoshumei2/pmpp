@@ -203,8 +203,8 @@ void runExperiment(int M, int K, int N) {
     cudaMemcpy(B_d, B_h, bytesB, cudaMemcpyHostToDevice);
     dim3 blockSize(TILE_WIDTH, TILE_WIDTH);
     dim3 gridSize(
-        (M + TILE_WIDTH - 1) / TILE_WIDTH,
-        (N + TILE_WIDTH - 1) / TILE_WIDTH
+        (N + TILE_WIDTH - 1) / TILE_WIDTH,
+        (M + TILE_WIDTH - 1) / TILE_WIDTH
     );
 
     GpuTimer gT1;
