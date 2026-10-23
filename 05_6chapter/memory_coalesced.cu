@@ -50,7 +50,7 @@ void matrixMulTransposedNaiveKernel (const float *A, const float *B, float *C, i
     }
 }
 
-#define TILE_WIDTH 16
+#define TILE_WIDTH 32
 
 __global__
 void matrixMulTiledKernel(const float *A, const float *B, float *C, int M, int K, int N) {
@@ -277,6 +277,6 @@ void runExperiment(int M, int K, int N) {
 }
 
 int main() {
-    runExperiment(1024, 10245, 1024);
+    runExperiment(1024, 1025, 1024);
     return 0;
 }
